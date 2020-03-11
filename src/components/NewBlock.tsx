@@ -13,18 +13,21 @@ function NewBlock() {
 function NewBlockButton() {
   return (
     <button
-      className="new-block-button">+</button>
+      className="new-block-button">
+      <svg className='plus-icon' viewBox="0 0 24 24">
+        <path fill="currentColor" d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+      </svg>
+      </button>
   )
 }
 
 function BlockInput() {
   return (
-    <div>
-      <input
-        className='block-input'
-        type='text'
-        placeholder="Type '/' for commands"></input>
-    </div>
+    <div
+      placeholder="Type '/' for commands"
+      contentEditable="true">
+        Type '/' for commands
+      </div>
   )
 }
 

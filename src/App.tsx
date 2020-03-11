@@ -7,6 +7,7 @@ function App() {
   return (
     <div className="App">
       <AppBar></AppBar>
+      <div id='add-blocks'></div>
       <NewBlock></NewBlock>
     </div>
   );

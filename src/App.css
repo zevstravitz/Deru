@@ -28,8 +28,8 @@
 
 .block-input {
   height: auto;
-  padding-top: 0.7rem;
-  border: none;
+  padding-top: 0.2rem;
+  border-width: 0px;
   font-size: 1rem;
   cursor: default;
   resize: none;
@@ -38,8 +38,12 @@
   display: block;
 }
 
-input, textarea {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+[contenteditable]:empty::before {
+  content: attr(placeholder);
+  display: block;
+  color: rgba(55, 53, 47, 0.4);
+}
+
+[contenteditable]:focus {
+  outline: 0px solid transparent;
 }

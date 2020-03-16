@@ -1,11 +1,12 @@
-import * as React from 'react'
+import React, {FunctionComponent, useState} from 'react'
 import '../App.css'
+import { prependOnceListener } from 'cluster'
 
 function NewBlock() {
   return (
     <span className="new-block">
       <NewBlockButton></NewBlockButton>
-      <BlockInput></BlockInput>
+      <BlockInput placeholder="Type '/' for commands"></BlockInput>
     </span>
   )
 }
@@ -21,13 +22,25 @@ function NewBlockButton() {
   )
 }
 
-function BlockInput() {
+interface BlockInputProps {
+  placeholder: string
+}
+
+const BlockInput: FunctionComponent<BlockInputProps> = (props) => {
+  const [content, setContent] = useState('')
+
+  // const checkSlash = (key) => {
+  //   if key == 
+  // }
+
   return (
-    <div
-      placeholder="Type '/' for commands"
-      contentEditable="true">
-        Type '/' for commands
-      </div>
+    <React.Fragment>
+      <div
+        className="block-input"
+        placeholder={props.placeholder}
+        contentEditable="true"
+        onKeyDown={e => setContent(e.currentTarget.innerHTML)}></div>
+    </React.Fragment>
   )
 }
 

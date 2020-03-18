@@ -1,4 +1,4 @@
-import React, {FunctionComponent, useState} from 'react'
+import React from 'react'
 import '../App.css'
 import { prependOnceListener } from 'cluster'
 
@@ -26,12 +26,23 @@ interface BlockInputProps {
   placeholder: string
 }
 
-const BlockInput: FunctionComponent<BlockInputProps> = (props) => {
-  const [content, setContent] = useState('')
+class BlockInput extends React.Component<BlockInputProps> {
+  constructor(props: BlockInputProps) {
+    super(props)
+    this.state = {}
+  }
 
-  // const checkSlash = (key) => {
-  //   if key == 
-  // }
+  handleInput() {
+    
+  }
+
+  componentDidMount() {
+
+  }
+
+  componentDidUpdate() {
+
+  }
 
   return (
     <React.Fragment>
@@ -39,7 +50,7 @@ const BlockInput: FunctionComponent<BlockInputProps> = (props) => {
         className="block-input"
         placeholder={props.placeholder}
         contentEditable="true"
-        onKeyDown={e => setContent(e.currentTarget.innerHTML)}></div>
+        onKeyDown={e => handleInput(e.currentTarget.innerHTML)}></div>
     </React.Fragment>
   )
 }

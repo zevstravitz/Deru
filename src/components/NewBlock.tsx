@@ -1,6 +1,7 @@
 import React from 'react'
 import '../App.css'
-import { prependOnceListener } from 'cluster'
+
+import uuid from 'uuid/v4'
 
 function NewBlock() {
   return (
@@ -27,31 +28,29 @@ interface BlockInputProps {
 }
 
 class BlockInput extends React.Component<BlockInputProps> {
-  constructor(props: BlockInputProps) {
-    super(props)
-    this.state = {}
+  state = {
+    innerContent: ''
   }
 
-  handleInput() {
-    
+  handleInput = () => {
+    return; 
   }
 
-  componentDidMount() {
-
+  componentDidMount () {
+    return;
   }
 
-  componentDidUpdate() {
-
+  componentDidUpdate () {
+    return;
   }
 
   return (
-    <React.Fragment>
       <div
+        id={uuid()}
         className="block-input"
-        placeholder={props.placeholder}
+        placeholder={this.props.placeholder}
         contentEditable="true"
-        onKeyDown={e => handleInput(e.currentTarget.innerHTML)}></div>
-    </React.Fragment>
+        onKeyDown={() => handleInput(e.currentTarget.innerHTML)}></div>
   )
 }
 

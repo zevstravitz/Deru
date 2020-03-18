@@ -50,7 +50,7 @@ class BlockInput extends React.Component<BlockInputProps> {
         className="block-input"
         placeholder={this.props.placeholder}
         contentEditable="true"
-        onKeyDown={() => handleInput(e.currentTarget.innerHTML)}></div>
+        onKeyDown={e => handleInput(e.currentTarget.innerHTML)}></div>
   )
 }
 

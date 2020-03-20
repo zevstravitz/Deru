@@ -3,7 +3,7 @@ import './index.css';
 import { v4 as uuidv4 } from 'uuid';
 
 import BlockInput from './BlockInput';
-import NewBlockButton from './'
+import NewBlockButton from './NewBlockButton'
 
 function NewBlock() {
   return (

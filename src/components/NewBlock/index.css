@@ -1,0 +1,45 @@
+/* ========= New Block ========= */
+.new-block {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.new-block-button {
+  border: none;
+  border-radius: 10%;
+  color: black;
+  background-color: white;
+}
+
+.plus-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.new-block-button:hover {
+  cursor: pointer;
+  background-color: #e6e6e6;
+}
+
+.block-input {
+  height: auto;
+  padding-top: 0.2rem;
+  border-width: 0px;
+  font-size: 1rem;
+  cursor: default;
+  resize: none;
+  overflow: hidden;
+  height: auto;
+  display: block;
+  white-space: pre-wrap;
+}
+/* for empty */
+[contenteditable]:empty:before, .empty-input {
+  content: attr(placeholder);
+  display: block;
+  color: rgba(55, 53, 47, 0.4);
+}
+
+[contenteditable]:focus {
+  outline: 0px solid transparent;
+}

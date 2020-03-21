@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
+// import NewBlock from '../NewBlock/index'
 import './index.css';
 
-interface BlockInputProps {
+type BlockInputProps = {
   id: string,
   placeholder: string
 }

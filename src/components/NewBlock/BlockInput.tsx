@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './index.css';
 
 interface BlockInputProps {
@@ -10,10 +10,18 @@ const BlockInput: React.FC<BlockInputProps> = (props) => {
   const [innerContent, setInnerContent] = useState('')
 
   const handleInput = (event: React.KeyboardEvent): any => {
+    if (event.key === 'Enter') {
+      console.log('enter key, update dom')
+    }
+
     let currContent  = document.getElementById(props.id)
     if (currContent)
       setInnerContent(currContent.innerText)
   }
+
+  useEffect(() => {
+    document.getElementById(props.id)?.focus()
+  })
 
   return (
       <React.Fragment>
@@ -24,7 +32,7 @@ const BlockInput: React.FC<BlockInputProps> = (props) => {
                     }
           placeholder={props.placeholder}
           contentEditable="true"
-          onKeyDown={(e) => handleInput(e)}
+          onKeyDown={e => handleInput(e)}
         >
         </div>
       </React.Fragment>

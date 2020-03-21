@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './index.css';
 
 interface BlockInputProps {
@@ -6,34 +6,29 @@ interface BlockInputProps {
   placeholder: string
 }
 
-class BlockInput extends React.Component<BlockInputProps> {
-  state = {
-    innerContent: ''
+const BlockInput: React.FC<BlockInputProps> = (props) => {
+  const [innerContent, setInnerContent] = useState('')
+
+  const handleInput = (event: React.KeyboardEvent): any => {
+    let currContent  = document.getElementById(props.id)
+    if (currContent)
+      setInnerContent(currContent.innerText)
   }
 
-  handleInput = (event: React.KeyboardEvent): any => {
-    let currContent  = document.getElementById(this.props.id)
-    this.setState({
-      innerContent: currContent?.innerText
-    })
-  }
-
-  render () {
-    return (
+  return (
       <React.Fragment>
         <div
-          id={this.props.id}
+          id={props.id}
           className={'block-input' +
-                    (this.state.innerContent === '' ? ' .empty-input' : '')
+                    (innerContent === '' ? ' .empty-input' : '')
                     }
-          placeholder={this.props.placeholder}
+          placeholder={props.placeholder}
           contentEditable="true"
-          onKeyDown={(e) => this.handleInput(e)}
+          onKeyDown={(e) => handleInput(e)}
         >
         </div>
       </React.Fragment>
     )
-  }
 }
 
 export default BlockInput;

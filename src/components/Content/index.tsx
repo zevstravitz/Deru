@@ -1,5 +1,5 @@
 import React from 'react';
-import NewBlock from '../NewBlock';
+import NewBlock from '../Block';
 
 const Content: React.FC<{}> = () => {
     return (

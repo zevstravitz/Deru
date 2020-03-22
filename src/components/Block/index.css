@@ -36,7 +36,7 @@
 /* for empty */
 [contenteditable]:empty:before, .empty-input {
   content: attr(placeholder);
-  display: block;
+  display: block; /* For Firefox */
   color: rgba(55, 53, 47, 0.4);
 }
 

@@ -1,13 +1,11 @@
-import React, { FunctionComponent } from 'react'
+import React, { FunctionComponent } from "react";
 
 type Props = {
-  color?: String
-}
+  color?: string;
+};
 
 const AppBar: FunctionComponent<Props> = (props) => {
-  return (
-    <nav className='app-bar'>Deru</nav>
-  )
-}
+  return <nav className="app-bar">Deru</nav>;
+};
 
 export default AppBar;

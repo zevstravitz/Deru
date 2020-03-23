@@ -1,18 +1,18 @@
 export interface PageI {
-    metadata: MetadataI,
-    pageContent: ContentI[]
+  metadata: MetadataI;
+  pageContent: ContentI[];
 }
 
 export interface MetadataI {
-    title: string,
-    author: string
+  title: string;
+  author: string;
 }
 
 // The content in this interface will change to match the custom types
 export interface ContentI {
-    id: string,
-    type: string,
-    content: [] | string
+  id: string;
+  type: string;
+  content: [] | string;
 }
 /*
 Plan - start with the simpler ones..text and latex
@@ -26,4 +26,3 @@ audio ~ gonna have to figure out the best platform to embed an audio component
 file ??
 video (youtube, vimeo) all they need is a link: string and we take care of the iframe
 */
-

@@ -1,27 +1,29 @@
-import React, {useState, useEffect} from 'react'
-import katex from 'katex';
+import React, { useState, useEffect } from "react";
+import katex from "katex";
+import './index.scss';
 
 type TexBlockProps = {
-    id: string
-}
+  id: string;
+};
 
 const TexBlock: React.FC<TexBlockProps> = (props) => {
-    const [tex, setTex] = useState('\\sum + \\frac{3}{4} + 4')
+  const [tex, setTex] = useState("\\sum + \\frac{3}{4} + 4");
+  const [raw, setRaw] = useState(true);
 
-    useEffect(() => {
-        let element = document.getElementById(props.id)
-        if (element) {
-            katex.render(tex, element, {
-                throwOnError: false,
-                displayMode: true
-            });
-        }
-    }, [tex, props.id])
+  useEffect(() => {
+    const element = document.getElementById(props.id);
+    if (element) {
+      katex.render(tex, element, {
+        throwOnError: false,
+        displayMode: true,
+      });
+    }
+  }, [tex, props.id]);
 
-    return (
-        <span id={props.id}>
-        </span>
-    )
-}
+  if (raw) return <span id={props.id}></span>;
+  else return (
+     <div contentEditable="true" placeholder='Type Tex'></div>
+  )
+};
 
 export default TexBlock;

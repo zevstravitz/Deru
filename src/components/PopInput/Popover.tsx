@@ -9,15 +9,19 @@ const OutsideAlerter: React.FC<OutsideAlerterProps> = (props) => {
   const wrapperRef = useRef(null);
   useOutsideAlerter(wrapperRef);
 
-  return <div ref={wrapperRef}>{props.children}</div>;
+  return (
+    <div ref={wrapperRef}>
+      {props.children}
+    </div>
+  )
 }
 
-type refType = React.MutableRefObject<null>
+type refType = React.MutableRefObject<any>
 
-//Custom hook for detecting outside click
+// Custom hook for detecting outside click
 const useOutsideAlerter = (ref: refType) => {
   const handleClickOutside = (event: Event) => {
-    if (ref.current && !ref.current?.contains(event.target)) {
+    if (ref.current && !ref.current.contains(event.target)) {
       alert("You clicked outside of me!");
     }
   }

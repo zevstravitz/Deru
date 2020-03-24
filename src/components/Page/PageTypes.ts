@@ -1,15 +1,15 @@
-export interface PageI {
-  metadata: MetadataI;
-  pageContent: ContentI[];
+export interface IPage {
+  metadata: IMetadata;
+  pageContent: IContent[];
 }
 
-export interface MetadataI {
+export interface IMetadata {
   title: string;
   author: string;
 }
 
 // The content in this interface will change to match the custom types
-export interface ContentI {
+export interface IContent {
   id: string;
   type: string;
   content: [] | string;

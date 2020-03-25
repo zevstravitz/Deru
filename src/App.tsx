@@ -1,6 +1,6 @@
 import React from "react";
 
-import NewBlock from "./components/Block";
+import Block from "./components/Block";
 import AppBar from "./components/AppBar";
 
 import TexBlock from "./components/Block/TexBlock";
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <AppBar></AppBar>
-      <NewBlock></NewBlock>
+      <Block></Block>
       <TexBlock id={uuidv4()}></TexBlock>
     </div>
   );

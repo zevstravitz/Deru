@@ -14,6 +14,7 @@ export interface IContent {
   type: string;
   content: [] | string;
 }
+
 /*
 Plan - start with the simpler ones..text and latex
 

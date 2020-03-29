@@ -12,9 +12,9 @@ const BlockInput: React.FC<BlockInputProps> = (props) => {
 
   const handleInput = (event: React.KeyboardEvent): any => {
     if (event.key === "Enter") {
-      innerContent
-    }
 
+    }
+    
     const currContent = document.getElementById(props.id);
     if (currContent) setInnerContent(currContent.innerText);
   };

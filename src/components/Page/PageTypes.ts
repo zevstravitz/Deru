@@ -6,6 +6,7 @@ export interface IPage {
 export interface IMetadata {
   title: string;
   author: string;
+  editable: Boolean;
 }
 
 // The content in this interface will change to match the custom types

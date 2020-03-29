@@ -33,8 +33,9 @@
   display: block;
   white-space: pre-wrap;
 }
+
 /* for empty */
-[contenteditable]:empty:before, .empty-input {
+[contenteditable]:empty:before {
   content: attr(placeholder);
   display: block; /* For Firefox */
   color: rgba(55, 53, 47, 0.4);

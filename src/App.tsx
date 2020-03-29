@@ -4,17 +4,18 @@ import './App.scss'
 import AppBar from "./components/AppBar";
 import Page from './components/Page/index';
 import { IPage } from "./components/Page/PageTypes";
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuid } from "uuid";
 
 function App() {
   const page: IPage = {
     metadata: {
       title: '',
-      author: ''
+      author: '',
+      editable: true
     },
     pageContent: [
       {
-        id: uuidv4(),
+        id: uuid(),
         type: 'text',
         content: ''
       }

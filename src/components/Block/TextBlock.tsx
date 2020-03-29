@@ -8,11 +8,11 @@ type BlockInputProps = {
 };
 
 const BlockInput: React.FC<BlockInputProps> = (props) => {
-  const [innerContent, setInnerContent] = useState("");
+  const [innerContent, setInnerContent] = useState('');
 
   const handleInput = (event: React.KeyboardEvent): any => {
     if (event.key === "Enter") {
-      console.log("enter key, update dom");
+      innerContent
     }
 
     const currContent = document.getElementById(props.id);
@@ -27,7 +27,7 @@ const BlockInput: React.FC<BlockInputProps> = (props) => {
     <React.Fragment>
       <div
         id={props.id}
-        className={"block-input" + (innerContent === "" ? " .empty-input" : "")}
+        className={"block-input" + (innerContent === "" ? "" : "")}
         placeholder={props.placeholder}
         contentEditable="true"
         onKeyDown={(e) => handleInput(e)}

@@ -1,6 +1,6 @@
 export interface IPage {
   metadata: IMetadata;
-  pageContent: IContent[];
+  pageContent: IBlock[];
 }
 
 export interface IMetadata {
@@ -9,7 +9,7 @@ export interface IMetadata {
 }
 
 // The content in this interface will change to match the custom types
-export interface IContent {
+export interface IBlock {
   id: string;
   type: string;
   content: [] | string;

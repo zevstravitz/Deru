@@ -1,17 +1,30 @@
 import React from "react";
+import './App.scss'
 
-import Block from "./components/Block";
 import AppBar from "./components/AppBar";
-
-import TexBlock from "./components/Block/TexBlock";
+import Page from './components/Page/index';
+import { IPage } from "./components/Page/PageTypes";
 import { v4 as uuidv4 } from "uuid";
 
 function App() {
+  const page: IPage = {
+    metadata: {
+      title: '',
+      author: ''
+    },
+    pageContent: [
+      {
+        id: uuidv4(),
+        type: 'text',
+        content: ''
+      }
+    ]
+  }
+
   return (
     <div className="App">
       <AppBar></AppBar>
-      <Block></Block>
-      <TexBlock id={uuidv4()}></TexBlock>
+      <Page page={page}/>
     </div>
   );
 }

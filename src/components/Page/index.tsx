@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React from "react";
 import { IPage, IBlock, IMetadata } from "./PageTypes";
 import { useImmerReducer } from 'use-immer';
 import { produce } from 'immer';
@@ -28,14 +28,14 @@ const Page: React.FC<{ page: IPage }> = (props) => {
 
   const [pageState, setPageState] = useImmerReducer(pageReducer, props.page)
 
-  // Add New Block
-  const addNewPage = () => pageReducer(pageState, { type: 'addNew' });
-  // Remove by Id
-  const page = (id) => {
-    produce(basePage, draftPage => {
-      draftPage
-    })
-  }
+  // // Add New Block
+  // const addNewPage = () => pageReducer(pageState, { type: 'addNew' });
+  // // Remove by Id
+  // const page = (id) => {
+  //   produce(basePage, draftPage => {
+  //     draftPage
+  //   })
+  // }
 
   return (
     <div>

@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import katex from "katex";
+
 import "./index.scss";
 
 type TexBlockProps = {
   id: string;
+  content: string;
 }; 
 
 const TexBlock: React.FC<TexBlockProps> = (props) => {
-  const [tex, setTex] = useState("\\sum + \\frac{3}{4} + 4");
+  const [tex, setTex] = useState(props.content);
   const [raw, setRaw] = useState(true);
 
   useEffect(() => {
